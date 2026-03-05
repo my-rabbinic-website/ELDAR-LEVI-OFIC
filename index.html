@@ -6,12 +6,10 @@
     <title>הרב אלדר לוי | טוען רבני ובורר מוסמך - דין אמת לאמיתו</title>
     
     <!-- Libraries -->
-    <script src="https://cdn.tailwindcss.com"></script>
+ <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;600;700;800&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <!-- Config -->
     <script>
         tailwind.config = {
             darkMode: 'class',
@@ -19,93 +17,72 @@
                 extend: {
                     fontFamily: {
                         sans: ['Assistant', 'sans-serif'],
-                        serif: ['Frank Ruhl Libre', 'serif'], // גופן סריפי למראה תורני/מכובד
+                        serif: ['Frank Ruhl Libre', 'serif'],
                     },
                     colors: {
                         gold: {
-                            50: '#FBF8F1',
-                            100: '#F5EDD9',
-                            200: '#EBD9B0',
-                            300: '#DFC286',
-                            400: '#D1A858',
-                            500: '#B38B36', // זהב עתיק יוקרתי
-                            600: '#8F6F2B',
-                            700: '#6B5320',
-                            800: '#4A3A16',
-                            900: '#261D0B',
+                            50: '#fdfbf7',
+                            100: '#f7f0e1',
+                            200: '#eddcb9',
+                            300: '#dfc085',
+                            400: '#d1a056',
+                            500: '#c5a059',
+                            600: '#b38728',
+                            700: '#8a651b',
                         },
                         navy: {
-                            800: '#1E293B',
-                            900: '#0F172A',
-                            950: '#020617', // כחול-שחור עמוק
+                            800: '#1a1f2c',
+                            900: '#0a0f1a',
+                            950: '#050810',
                         }
                     },
                     backgroundImage: {
-                        'pattern-overlay': "url('https://www.transparenttextures.com/patterns/black-linen.png')",
+                       'parchment': "url('https://www.transparenttextures.com/patterns/parchment.png')",
+                       'dark-pattern': "url('https://www.transparenttextures.com/patterns/black-linen.png')"
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* Base Styles */
-        body { 
-            font-family: 'Assistant', sans-serif; 
-            background-color: #020617; 
-            color: #FBF8F1;
-            overflow-x: hidden;
+        :root {
+            --gold-primary: #c5a059;
+            --navy-deep: #050810;
         }
         
-        h1, h2, h3, h4, .serif { font-family: 'Frank Ruhl Libre', serif; }
-
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #020617; }
-        ::-webkit-scrollbar-thumb { background: linear-gradient(to bottom, #8F6F2B, #D1A858); border-radius: 4px; }
-
-        /* Golden Glow Effect */
-        .text-glow {
-            text-shadow: 0 0 20px rgba(209, 168, 88, 0.4);
+        body {
+            font-family: 'Assistant', sans-serif;
+            background-color: #fdfbf7;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* מונע גלילה לצדדים במובייל */
         }
 
-        /* Glass Cards */
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.7);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(179, 139, 54, 0.15);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        /* הוספת כללים רספונסיביים */
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
-        /* Hover Effects */
-        .hover-gold-border:hover {
-            border-color: rgba(179, 139, 54, 0.6);
-            box-shadow: 0 0 25px rgba(179, 139, 54, 0.15);
-        }
-
-        /* Ticker Animation */
-        .ticker-wrap {
-            width: 100%;
-            overflow: hidden;
-            background-color: #B38B36;
-            color: #020617;
-            height: 30px;
-            line-height: 30px;
-        }
-        .ticker-move {
-            display: inline-block;
-            white-space: nowrap;
-            padding-right: 100%;
-            animation: ticker 25s linear infinite;
-        }
-        @keyframes ticker {
-            0% { transform: translate3d(0, 0, 0); }
-            100% { transform: translate3d(100%, 0, 0); }
+        /* התאמות למסכים קטנים */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem !important; }
+            h2 { font-size: 1.5rem !important; }
+            .container { padding: 0 15px !important; }
+            
+            /* הפיכת גריד של טאילוינד לטור אחד במובייל אם שכחת להוסיף class */
+            .grid {
+                grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+            }
         }
     </style>
 </head>
-<body class="selection:bg-gold-500 selection:text-navy-950">
+<body class="bg-parchment">
+    </body>
+</html>
 
     <!-- Preloader -->
     <div id="loader" class="fixed inset-0 z-[9999] bg-navy-950 flex flex-col items-center justify-center transition-opacity duration-1000 bg-pattern-overlay">
@@ -861,4 +838,5 @@
         });
     </script>
 </body>
+
 </html>
